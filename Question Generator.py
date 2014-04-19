@@ -5,13 +5,17 @@ Question Generator Program
 #Imports
 import json
 
+#Set global question number
+global question_number
+question_number = 0
+
 #Define function to get chapter questions
 def get_chapter_questions(chapter):
     global info
     info = json.load(open("Questions/Chapter " + chapter + ".txt"))
 
 #Define function for creating a question
-def make_question(chapter, author):
+def make_question(chapter, author, question_number):
     question = input("What is the question?")
     print("----------------")
     choice1 = input("What is the first choice?")
@@ -32,17 +36,36 @@ def make_question(chapter, author):
     print("Answer: " + answer)
     print("----------------")
 
+    #Store question as a list
+    my_question = [author, question, choice1, choice2, choice3, choice4, answer]
+
     #Confirm that entered info is correct
     finished = input("Is this info correct? (y/n)")
     if finished == "y":
-        done = input("Would you like to make any other questions for this chapter? (y/n)")
-        if done == "y":
-            make_question(chapter, author)
+
+        #Add question to question database
+        if question_number == 0:
+            question_number = info["question_count"] + 1
+        else:
+            question_number = question_number + 1
+
+        #Put question into dictionary
+        info[question_number] = my_question
+
+        #Set question_count to new value
+        info["question_count"] = question_number
+
+        #Check to see if user wants to add more questions to chapter
+        nt_done = input("Would you like to make any other questions for this chapter? (y/n)")
+        if nt_done == "y":
+            #Make new question
+            make_question(chapter, author, question_number)
         else:
             #Write to chapter file
             json.dump(info, open("Questions/Chapter " + chapter + ".txt",'w'))
     else:
-        make_question(chapter, author)
+        #Re-do question
+        make_question(chapter, author, question_number)
     
 #Print intro
 print("-----------------------------------")
@@ -61,4 +84,4 @@ print("----------------")
 get_chapter_questions(chapter)
 
 #Make new question(s)
-make_question(chapter, author)
+make_question(chapter, author, question_number)
