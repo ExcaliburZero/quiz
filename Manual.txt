@@ -1,0 +1,19 @@
+This is the manual for the quiz program.
+=====================
+Table of Contents
+=====================
+001 - Creating a Chapter
+002 - Creating Questions
+003 - Creating a Quiz
+=====================
+001 - Creating a Chapter
+
+Before you are able to make questions for quizzes you must generate the chapter files which will store the questions.
+All questions are sorted by chapters, with each chapter having a numerical value (1, 2, 3, etc.) in order to mirror the
+chapters of a text book. When a quiz is generated it will pull random questions from a specified chapter.
+
+To create a chapter file you must run "Chapter Generator.py". You will then be asked for the number of the chapter
+(1, 2, 3, etc.). Once you input the chapter number the program will generate the chapter file. Once the chapter file is
+generated you can then move on to creating the questions.
+=====================
+002 - Creating Questions
