@@ -12,7 +12,7 @@ def get_chapter_questions(chapter):
     info = json.load(open("Questions/Chapter " + chapter + ".txt"))
 
 #Define function to get question
-def get_question(chapter, answered_questions, question_count, info):
+def get_question(chapter, answered_questions, question_count, info, correct_questions):
     random_question = randint(1,question_count)
     while random_question in answered_questions:
         random_question = randint(1,question_count)
@@ -29,11 +29,13 @@ def get_question(chapter, answered_questions, question_count, info):
     print("----------------")
     if answer == current_question[6]:
         print("Correct!")
+        correct_questions = correct_questions + 1
+        print(str(correct_questions))
     else:
         print("Incorrect! The correct answer is " + current_question[6] + ".")
     print("----------------")
     answered_questions.append(random_question)
-    return answered_questions
+    return correct_questions
 
 #Print intro
 print("-----------------------------------")
@@ -65,8 +67,18 @@ while selected_num_questions > question_count:
 
 #Set up answered questions list
 answered_questions = []
+correct_questions = 0
 
 #Get questions
 while i > 0:
-    get_question(chapter, answered_questions, question_count, info)
+    correct_questions = get_question(chapter, answered_questions, question_count, info, correct_questions)
     i = i - 1
+
+#Output quiz info
+print("Results")
+print("----------------")
+print("Questions: " + str(selected_num_questions))
+print("Correct: " + str(correct_questions))
+print("Incorrect: " + str(selected_num_questions - correct_questions))
+print("Score: " + str((correct_questions / selected_num_questions) * 100) + "%")
+print("----------------")
