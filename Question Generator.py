@@ -8,7 +8,7 @@ import json
 #Define function to get chapter questions
 def get_chapter_questions(chapter):
     global info
-    info = json.load(open("/Questions/Chapter " + chapter + ".txt"))
+    info = json.load(open("Questions/Chapter " + chapter + ".txt"))
 
 #Define function for creating a question
 def make_question(chapter, author):
@@ -40,7 +40,7 @@ def make_question(chapter, author):
             make_question(chapter, author)
         else:
             #Write to chapter file
-            json.dump(info, open("/Questions/Chapter " + chapter + ".txt",'w'))
+            json.dump(info, open("Questions/Chapter " + chapter + ".txt",'w'))
     else:
         make_question(chapter, author)
     
