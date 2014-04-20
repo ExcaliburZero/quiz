@@ -25,3 +25,9 @@ The program will then output the question in the format it will be displayed dur
 Once you have correctly entered the question you will be asked if you would like to make another question for that same chapter. If you would like to enter another question for the same chapter then input "y", and you will then be able to input another question. You can enter as many questions in a row as you want, but they will only be saved after you select that you do not want to enter any more questions to the selected chapter. When you are done entering questions for the selected chapter input "n", and then the question(s) you have entered will be saved to the selected chapter file.
 
 In order to add more questions to a chapter different than the chapter specified when the program was run you must finish running the program, and then re-run the program but specifiy the new chapter that you want to add questions to.
+=====================
+003 - Creating a Quiz
+
+Once you have added some questions to a chapter you can now generate quizzes for that chapter. Currently quizzes can only be done by using a computer to input your answers, there is currently no function to output quizzes into a print-able format.
+
+To do a randomly generated quiz on a topic you must run "Quiz Generator.py".
