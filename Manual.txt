@@ -34,6 +34,16 @@ To do a randomly generated quiz on a topic you must run "Quiz Generator.py". You
 
 The program will then randomly grab a question from the chapter and let you try to answer it. You must enter the number of the correct answer (1, 2, 3, or 4). If you answer the question correctly then the program will let you know that you answered the question correctly. If you answer the question incorrectly then the question will let you know that the answer you entered was not correct and it will let you know what the correct answer was.
 
+Note that the questions are outputed in the following format:
+
+2) What is 1 + 1?
+1. 2
+2. 4
+3. 8
+4. 42
+
+Especially note that the number before the question is the number that the question is stored under in the chapter file, not the number of the question in the quiz. This is done so that it is easier to find the question in case it needs to be modified.
+
 After you complete a question, if you still have more questions left to go in the quiz then you will be asked to answer another random question from the chapter that you haven't answered yet durring the current quiz. This process will be repeated until you have answered as many questions as you specified that you wanted to answer when you ran the program.
 
 Once you have answered all the questions in the quiz you will be given the results of the quiz. You will be shown the number of questions answered in the quiz, the number of questions answered correctly, the number of questions answered incorrectly, and the percentage score of the quiz.
