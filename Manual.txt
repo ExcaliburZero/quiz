@@ -30,4 +30,10 @@ In order to add more questions to a chapter different than the chapter specified
 
 Once you have added some questions to a chapter you can now generate quizzes for that chapter. Currently quizzes can only be done by using a computer to input your answers, there is currently no function to output quizzes into a print-able format.
 
-To do a randomly generated quiz on a topic you must run "Quiz Generator.py".
+To do a randomly generated quiz on a topic you must run "Quiz Generator.py". You will then be asked which chapter you would like to take a quiz on. You must then input the number of the chapter that you want to answer questions from (1, 2, 3, etc.). You will then be told how many questions are in the specified chapter. You then need to input how many questions from the chapter you want to answer in the quiz (1, 2, 3, etc.). Note that you cannot enter a number higher than the number of questions avalible in the specified chapter, as that would not be a possible quiz to make.
+
+The program will then randomly grab a question from the chapter and let you try to answer it. You must enter the number of the correct answer (1, 2, 3, or 4). If you answer the question correctly then the program will let you know that you answered the question correctly. If you answer the question incorrectly then the question will let you know that the answer you entered was not correct and it will let you know what the correct answer was.
+
+After you complete a question, if you still have more questions left to go in the quiz then you will be asked to answer another random question from the chapter that you haven't answered yet durring the current quiz. This process will be repeated until you have answered as many questions as you specified that you wanted to answer when you ran the program.
+
+Once you have answered all the questions in the quiz you will be given the results of the quiz. You will be shown the number of questions answered in the quiz, the number of questions answered correctly, the number of questions answered incorrectly, and the percentage score of the quiz.
