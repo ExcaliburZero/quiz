@@ -13,7 +13,13 @@ All questions are sorted by chapters, with each chapter having a numerical value
 chapters of a text book. When a quiz is generated it will pull random questions from a specified chapter.
 
 To create a chapter file you must run "Chapter Generator.py". You will then be asked for the number of the chapter
-(1, 2, 3, etc.). Once you input the chapter number the program will generate the chapter file. Once the chapter file is
-generated you can then move on to creating the questions.
+(1, 2, 3, etc.). Once you input the chapter number the program will generate the chapter file. Note that chapter files
+are all stored in the "Questions" folder, as for example "Chapter 1.txt". Once the chapter file is generated you can
+then move on to creating the questions.
 =====================
 002 - Creating Questions
+
+After you have created a chapter file you can now create question for that chapter. Be sure that you generate the chapter
+file before attempting to add questions to it otherwise it may not work correctly.
+
+To add questions to a chapter you must run "Question Generator.py".
